@@ -2,21 +2,18 @@
 	"name": "ac-critter-fe",
 	"version": "1.0.0",
 	"private": true,
+	"proxy": "http://localhost:3000",
 	"dependencies": {
 		"@apollo/client": "^3.0.0-beta.43",
-		"@testing-library/jest-dom": "^4.2.4",
-		"@testing-library/react": "^9.5.0",
-		"@testing-library/user-event": "^7.2.1",
-		"@types/jest": "^24.9.1",
-		"@types/node": "^12.12.35",
-		"@types/react": "^16.9.33",
-		"@types/react-dom": "^16.9.6",
+		"dayjs": "^1.8.23",
+		"graphql": "^15.0.0",
+		"normalize.css": "^8.0.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-scripts": "3.4.1",
+		"react-table": "^7.0.4",
 		"styled-components": "^5.1.0",
-		"styled-system": "^5.1.5",
-		"typescript": "^3.7.5"
+		"styled-system": "^5.1.5"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -40,7 +37,16 @@
 		]
 	},
 	"devDependencies": {
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.5.0",
+		"@testing-library/user-event": "^7.2.1",
+		"@types/jest": "^24.9.1",
+		"@types/node": "^12.12.35",
+		"@types/react": "^16.9.33",
+		"@types/react-dom": "^16.9.6",
+		"@types/react-table": "^7.0.14",
 		"@types/styled-components": "^5.0.1",
-		"@types/styled-system": "^5.1.9"
+		"@types/styled-system": "^5.1.9",
+		"typescript": "^3.7.5"
 	}
 }
