@@ -4,9 +4,15 @@ The tool that let's you see what Animal Crossing: New Horizons critters you can 
 
 ## How to Run
 
+Make sure you have Now installed:
+
+```zsh
+$ npm i -g now
+```
+
+Then:
+
 ```zsh
 $ npm i
-$ npm start
-# In a seperate terminal
 $ now dev
 ```

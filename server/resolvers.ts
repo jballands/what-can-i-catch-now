@@ -15,7 +15,7 @@ type FishArgs = {
 
 const queries = {
 	Query: {
-		Bugs: (parent: never, args: BugsArgs) => {
+		Bugs: (parent: any, args: BugsArgs) => {
 			return bugs
 				.filter((bug) => {
 					const isInHemisphere = bug.hemisphere === args.hemisphere;
@@ -34,7 +34,7 @@ const queries = {
 				})
 				.sort((a, b) => b.cost - a.cost);
 		},
-		Fish: (parent: never, args: FishArgs) => {
+		Fish: (parent: any, args: FishArgs) => {
 			return fishes
 				.filter((fish) => {
 					const isInHemisphere = fish.hemisphere === args.hemisphere;
