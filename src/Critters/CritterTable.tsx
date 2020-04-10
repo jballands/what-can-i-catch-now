@@ -12,6 +12,14 @@ const AlternatingRows = styled.tr`
 	}
 `;
 
+const StyledTh = styled(Th)`
+	white-space: nowrap;
+
+	&:hover {
+		cursor: pointer;
+	}
+`;
+
 interface TableProps {
 	table: TableInstance;
 }
@@ -31,16 +39,24 @@ function CritterTable({ table }: TableProps) {
 				<thead>
 					{headerGroups.map((headerGroup) => (
 						<tr {...headerGroup.getHeaderGroupProps()}>
-							{headerGroup.headers.map((column) => (
-								<Th
-									{...column.getHeaderProps()}
+							{/* Just do any to make this work... */}
+							{headerGroup.headers.map((column: any) => (
+								<StyledTh
+									{...column.getHeaderProps(column.getSortByToggleProps())}
 									bg="brown2"
 									textAlign="left"
 									py={3}
 									px={[1, 3, 3]}
 								>
+									<span>
+										{column.isSorted
+											? column.isSortedDesc
+												? '↓ '
+												: ' ↑ '
+											: ''}
+									</span>
 									{column.render('Header')}
-								</Th>
+								</StyledTh>
 							))}
 						</tr>
 					))}

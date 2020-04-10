@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import dayjs from 'dayjs';
-import { useTable } from 'react-table';
+import { useTable, useSortBy } from 'react-table';
 import { useHemisphere } from '../HemisphereContext';
 import CritterTable from './CritterTable';
 import CritterImg from './CritterImg';
@@ -66,10 +66,13 @@ function Fish() {
 		[],
 	);
 
-	const table = useTable({
-		columns,
-		data: data?.Fish ?? [],
-	});
+	const table = useTable(
+		{
+			columns,
+			data: data?.Fish ?? [],
+		},
+		useSortBy,
+	);
 
 	if (loading) {
 		return (
