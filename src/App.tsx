@@ -36,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
 	body {
 		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 		lineHeight: 12px;
+		background: #807056;
 	}
 `;
 
@@ -50,11 +51,22 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<HemisphereProvider>
 					<GlobalStyles />
+					<Flex
+						bg="brown4"
+						height="150px"
+						alignItems="center"
+						justifyContent="center"
+						color="brown0"
+					>
+						<Text fontSize="2rem" textAlign="center" fontWeight="600" mx={3}>
+							What critters can I catch right now?
+						</Text>
+					</Flex>
 					<Box
 						bg="brown0"
 						color="brown4"
 						minHeight="calc(100vh - 75px - 60px)"
-						py="50px"
+						py="40px"
 					>
 						<Box width="87.5%" mx="auto">
 							<Flex flexDirection="column">
@@ -65,9 +77,10 @@ function App() {
 					</Box>
 					<Flex
 						bg="brown4"
-						height="75px"
+						height="100px"
 						alignItems="center"
 						justifyContent="center"
+						color="brown0"
 					>
 						<a
 							href="https://jonathanballands.me"

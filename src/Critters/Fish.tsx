@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import { useTable } from 'react-table';
 import { useHemisphere } from '../HemisphereContext';
 import CritterTable from './CritterTable';
-
+import CritterImg from './CritterImg';
 import { Text } from '../SS';
 
 const fishQuery = gql`
@@ -45,7 +45,9 @@ function Fish() {
 				Header: '',
 				id: 'image',
 				Cell: ({ row }: { row: any }) => {
-					return <img alt={row.original.name} src={row.original.image} />;
+					return (
+						<CritterImg alt={row.original.name} src={row.original.image} />
+					);
 				},
 			},
 			{

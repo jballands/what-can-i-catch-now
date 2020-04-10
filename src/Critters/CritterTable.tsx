@@ -26,7 +26,7 @@ function CritterTable({ table }: TableProps) {
 	} = table;
 
 	return (
-		<Box borderRadius="15px" overflow="hidden">
+		<Box borderRadius="15px" overflow="hidden" width="100%">
 			<Table width="100%" {...getTableProps()}>
 				<thead>
 					{headerGroups.map((headerGroup) => (
@@ -35,9 +35,9 @@ function CritterTable({ table }: TableProps) {
 								<Th
 									{...column.getHeaderProps()}
 									bg="brown2"
-									px={3}
-									py={3}
 									textAlign="left"
+									py={3}
+									px={[1, 3, 3]}
 								>
 									{column.render('Header')}
 								</Th>
@@ -52,7 +52,7 @@ function CritterTable({ table }: TableProps) {
 							<AlternatingRows {...row.getRowProps()}>
 								{row.cells.map((cell) => {
 									return (
-										<Td p={3} textAlign="left" {...cell.getCellProps()}>
+										<Td {...cell.getCellProps()} px={[1, 3, 3]}>
 											{cell.render('Cell')}
 										</Td>
 									);

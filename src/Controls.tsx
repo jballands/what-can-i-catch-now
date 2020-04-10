@@ -1,7 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
 import styled from 'styled-components';
-import { Flex, Text } from './SS';
+import { Box, Grid, Flex, Text } from './SS';
 import { useHemisphere } from './HemisphereContext';
 import { Hemisphere } from './types';
 
@@ -19,11 +19,27 @@ const Button = styled.button<ButtonProps>`
 		}
 	}
 
+	${(p) =>
+		p.selected
+			? `
+		border: 4px solid #4de2da;
+		background-size: 150% 100%;
+		background-image: repeating-linear-gradient(
+			-45deg,
+			#0ec4b6,
+			#0ec4b6 10px,
+			#01b0a7 10px,
+			#01b0a7 20px
+		);
+		animation: barbershopPole 3s linear infinite;
+	`
+			: `
+		background: #0ec4b6;
+		border: 4px solid #4de2da;
+	}`}
+
 	border-radius: 50px;
-	background: ${(p) => (p.selected ? '#6faa40' : '#0ec4b6')};
-	padding: 15px;
 	color: #fff;
-	border: 5px solid ${(p) => (p.selected ? '#8bd739' : '#4de2da')};
 	font-weight: 600;
 	font-size: 1.2rem;
 	margin: 0 3px;
@@ -31,7 +47,7 @@ const Button = styled.button<ButtonProps>`
 
 	&:hover {
 		cursor: pointer;
-		border: 5px solid #4de2da;
+		border: 4px solid #4de2da;
 		background-size: 150% 100%;
 		background-image: repeating-linear-gradient(
 			-45deg,
@@ -52,38 +68,37 @@ function Controls() {
 			flexDirection="column"
 			justifyContent="center"
 			alignItems="center"
-			mb={4}
+			mb={[2, 4, 4]}
 		>
-			<Text fontSize="2rem" fontWeight="600" mb={4}>
-				What critters can I catch?
-			</Text>
-
-			<Flex
+			<Grid
 				fontSize="1.2rem"
-				flexDirection="row"
-				flexWrap="wrap"
 				lineHeight="2rem"
 				alignItems="center"
-				justifyContent="center"
+				justifyItems="center"
+				gridTemplateColumns={['1fr', '1fr', 'auto auto auto']}
+				gridTemplateRows={['auto auto auto', 'auto auto auto', '1fr']}
+				gridColumnGap="5px"
 				mb={3}
 			>
-				<Text mr={2}>My island is in the</Text>
-				<Button
-					selected={hemisphere === Hemisphere.North}
-					onClick={() => setHemisphere(Hemisphere.North)}
-				>
-					Northern
-				</Button>
-				<Button
-					selected={hemisphere === Hemisphere.South}
-					onClick={() => setHemisphere(Hemisphere.South)}
-				>
-					Southern
-				</Button>
-				<Text ml={2}>
+				<Text textAlign="center">My island is in the</Text>
+				<Box>
+					<Button
+						selected={hemisphere === Hemisphere.North}
+						onClick={() => setHemisphere(Hemisphere.North)}
+					>
+						<Box p={[2, 3, 3]}>Northern</Box>
+					</Button>
+					<Button
+						selected={hemisphere === Hemisphere.South}
+						onClick={() => setHemisphere(Hemisphere.South)}
+					>
+						<Box p={[2, 3, 3]}>Southern</Box>
+					</Button>
+				</Box>
+				<Text textAlign="center">
 					hemisphere. It's {dayjs().format('dddd MMMM D, h:mmA')}.
 				</Text>
-			</Flex>
+			</Grid>
 		</Flex>
 	);
 }

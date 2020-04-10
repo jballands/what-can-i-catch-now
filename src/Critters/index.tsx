@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid } from '../SS';
+import { Flex, Grid, Text } from '../SS';
 import Fish from './Fish';
 import Bugs from './Bugs';
 
@@ -7,20 +7,29 @@ function Critters() {
 	return (
 		<Grid
 			bg="brown1"
-			gridTemplateColumns={['1fr', '1fr', '1fr 1fr']}
-			gridTemplateRows={['1fr 1fr', '1fr 1fr', '1fr']}
+			gridTemplateColumns={['100%', '100%', '1fr 1fr']}
+			gridTemplateRows={['1fr auto', '1fr auto', '100%']}
 			gridColumnGap="10px"
 			gridRowGap="10px"
-			borderRadius="10px"
-			p={2}
+			borderRadius="18px"
+			pt={3}
+			pb={[1, 3, 3]}
+			px={[1, 3, 3]}
+			fontSize={['0.85rem', '1rem', '1rem']}
 		>
-			<Box p={2}>
+			<Flex flexDirection="column" alignItems="center">
+				<Text fontSize="2rem" fontWeight="600" pb={3}>
+					Fish
+				</Text>
 				<Fish />
-			</Box>
+			</Flex>
 
-			<Box p={2}>
+			<Flex flexDirection="column" alignItems="center">
+				<Text fontSize="2rem" fontWeight="600" pb={3}>
+					Bugs
+				</Text>
 				<Bugs />
-			</Box>
+			</Flex>
 		</Grid>
 	);
 }
