@@ -40,16 +40,9 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 function App() {
-	const uri =
-		process.env.NODE_ENV === 'development'
-			? '/api/graphql'
-			: 'https://ac-critter-api.now.sh/api/graphql';
-
-	console.dir(uri);
-
 	const client = new ApolloClient({
 		cache: new InMemoryCache(),
-		link: new HttpLink({ uri }),
+		link: new HttpLink({ uri: '/api/graphql' }),
 	});
 
 	return (
