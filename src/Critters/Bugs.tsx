@@ -26,7 +26,7 @@ function Bugs() {
 
 	const { hemisphere } = useHemisphere();
 
-	const { data, loading } = useQuery(bugQuery, {
+	const { data, loading, error } = useQuery(bugQuery, {
 		variables: {
 			hemisphere,
 			time,
@@ -67,7 +67,15 @@ function Bugs() {
 	});
 
 	if (loading) {
-		return <Text>Loading...</Text>;
+		return (
+			<Text fontStyle="italic" my={3}>
+				Looking for bugs you can catch right now...
+			</Text>
+		);
+	}
+	if (error) {
+		console.error(error);
+		return <Text my={3}>Error :(</Text>;
 	}
 
 	return <CritterTable table={table} />;

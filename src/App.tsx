@@ -62,10 +62,11 @@ function App() {
 							What critters can I catch right now?
 						</Text>
 					</Flex>
+
 					<Box
 						bg="brown0"
 						color="brown4"
-						minHeight="calc(100vh - 75px - 60px)"
+						minHeight="calc(100vh - 150px - 100px - 80px)"
 						py="40px"
 					>
 						<Box width="87.5%" mx="auto">
@@ -75,6 +76,8 @@ function App() {
 							</Flex>
 						</Box>
 					</Box>
+
+					{/* Footer */}
 					<Flex
 						bg="brown4"
 						height="100px"

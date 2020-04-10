@@ -12,6 +12,7 @@ function Critters() {
 			gridColumnGap="10px"
 			gridRowGap="10px"
 			borderRadius="18px"
+			minHeight="50vh"
 			pt={3}
 			pb={[1, 3, 3]}
 			px={[1, 3, 3]}

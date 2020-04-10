@@ -19,8 +19,8 @@ const queries = {
 			return bugs
 				.filter((bug) => {
 					const isInHemisphere = bug.hemisphere === args.hemisphere;
-					const hasTime = bug.times.indexOf(args.time) > -1;
-					const hasMonth = bug.months.indexOf(args.month) > -1;
+					const hasTime = bug.times.indexOf(args?.time ?? -1) > -1;
+					const hasMonth = bug.months.indexOf(args?.month ?? -1) > -1;
 
 					let result = isInHemisphere;
 					if (args.time) {
@@ -38,8 +38,8 @@ const queries = {
 			return fishes
 				.filter((fish) => {
 					const isInHemisphere = fish.hemisphere === args.hemisphere;
-					const hasTime = fish.times.indexOf(args.time) > -1;
-					const hasMonth = fish.months.indexOf(args.month) > -1;
+					const hasTime = fish.times.indexOf(args?.time ?? -1) > -1;
+					const hasMonth = fish.months.indexOf(args?.month ?? -1) > -1;
 
 					let result = isInHemisphere;
 					if (args.time) {

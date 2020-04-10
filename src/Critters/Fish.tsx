@@ -27,7 +27,7 @@ function Fish() {
 
 	const { hemisphere } = useHemisphere();
 
-	const { data, loading } = useQuery(fishQuery, {
+	const { data, loading, error } = useQuery(fishQuery, {
 		variables: {
 			hemisphere,
 			time,
@@ -72,7 +72,15 @@ function Fish() {
 	});
 
 	if (loading) {
-		return <Text>Loading...</Text>;
+		return (
+			<Text fontStyle="italic" my={3}>
+				Looking for fish you can catch right now...
+			</Text>
+		);
+	}
+	if (error) {
+		console.error(error);
+		return <Text my={3}>Error :(</Text>;
 	}
 
 	return <CritterTable table={table} />;
