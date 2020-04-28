@@ -88,6 +88,15 @@ function App() {
 							color="brown0"
 						>
 							<a
+								href="https://github.com/jballands/what-can-i-catch-now"
+								style={{ textDecoration: 'none' }}
+							>
+								<WebsiteLink color="brown0" mr="7px">
+									v1.1.1
+								</WebsiteLink>
+							</a>
+							<Text mr="7px">|</Text>
+							<a
 								href="https://jonathanballands.me"
 								style={{ textDecoration: 'none' }}
 							>
