@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
-import dayjs from 'dayjs';
 import { useTable, useSortBy } from 'react-table';
 import { useHemisphere } from '../HemisphereContext';
+import { useTime } from '../TimeContext';
 import CritterTable from './CritterTable';
 import CritterImg from './CritterImg';
 import { Text } from '../SS';
@@ -20,17 +20,14 @@ const bugQuery = gql`
 `;
 
 function Bugs() {
-	const now = dayjs();
-	const time = now.hour();
-	const month = now.month() + 1;
-
 	const { hemisphere } = useHemisphere();
+	const { timeSlice } = useTime();
 
 	const { data, loading, error } = useQuery(bugQuery, {
 		variables: {
 			hemisphere,
-			time,
-			month,
+			time: timeSlice.hour(),
+			month: timeSlice.month(),
 		},
 	});
 

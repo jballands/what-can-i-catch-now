@@ -31,7 +31,7 @@ function DateTimePicker() {
 			flexDirection="column"
 			alignItems="center"
 		>
-			<Text>It's currently</Text>
+			<Text mb={2}>It's currently:</Text>
 
 			<Grid gridTemplateColumns="115px 30px 100px" gridColumnGap="5px">
 				<DateTimePickerToggle
