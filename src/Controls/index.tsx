@@ -1,9 +1,9 @@
 import React from 'react';
-import dayjs from 'dayjs';
 import styled from 'styled-components';
-import { Box, Grid, Flex, Text } from './SS';
-import { useHemisphere } from './HemisphereContext';
-import { Hemisphere } from './types';
+import DateTimePicker from './DateTimePicker';
+import { Box, Grid, Flex, Text } from '../SS';
+import { useHemisphere } from '../HemisphereContext';
+import { Hemisphere } from '../types';
 
 interface ButtonProps {
 	selected: boolean;
@@ -75,8 +75,8 @@ function Controls() {
 				lineHeight="2rem"
 				alignItems="center"
 				justifyItems="center"
-				gridTemplateColumns={['1fr', '1fr', 'auto auto auto']}
-				gridTemplateRows={['auto auto auto', 'auto auto auto', '1fr']}
+				gridTemplateColumns={['1fr', 'auto auto auto', 'auto auto auto']}
+				gridTemplateRows={['auto auto auto', '1fr', '1fr']}
 				gridColumnGap="5px"
 				mb={3}
 			>
@@ -95,10 +95,10 @@ function Controls() {
 						<Box p={[2, 3, 3]}>Southern</Box>
 					</Button>
 				</Box>
-				<Text textAlign="center">
-					hemisphere. It's {dayjs().format('dddd MMMM D, h:mmA')}.
-				</Text>
+				<Text textAlign="center">hemisphere.</Text>
 			</Grid>
+			<DateTimePicker />
+			{/* It's {dayjs().format('dddd MMMM D, h:mmA')}. */}
 		</Flex>
 	);
 }
