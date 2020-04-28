@@ -2978,7 +2978,7 @@
 		"name": "Coelacanth",
 		"image": "/fish/coelacanth.png",
 		"cost": 15000,
-		"location": "Sea",
+		"location": "Sea (Rain/Snow)",
 		"size": 6,
 		"times": [
 			0,
