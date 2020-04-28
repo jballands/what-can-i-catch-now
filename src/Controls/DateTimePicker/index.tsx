@@ -33,7 +33,7 @@ function DateTimePicker() {
 		>
 			<Text mb={2}>It's currently:</Text>
 
-			<Grid gridTemplateColumns="115px 30px 100px" gridColumnGap="5px">
+			<Grid gridTemplateColumns="115px 30px 110px" gridColumnGap="5px">
 				<DateTimePickerToggle
 					value={month}
 					onUp={addMonth}
