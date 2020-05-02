@@ -28,7 +28,6 @@ function Fish() {
 		variables: {
 			hemisphere,
 			time: timeSlice.hour(),
-			// temp fix
 			month: timeSlice.month() + 1,
 		},
 	});

@@ -27,7 +27,7 @@ function Bugs() {
 		variables: {
 			hemisphere,
 			time: timeSlice.hour(),
-			month: timeSlice.month(),
+			month: timeSlice.month() + 1,
 		},
 	});
 
