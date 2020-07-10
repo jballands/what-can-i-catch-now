@@ -2,12 +2,13 @@ import React from 'react';
 import { Flex, Grid, Text } from '../SS';
 import Fish from './Fish';
 import Bugs from './Bugs';
+import Sea from './Sea';
 
 function Critters() {
 	return (
 		<Grid
 			bg="brown1"
-			gridTemplateColumns={['100%', '100%', '1fr 1fr']}
+			gridTemplateColumns={['100%', '100%', '1fr 1fr 1fr']}
 			gridTemplateRows={['1fr auto', '1fr auto', '100%']}
 			gridColumnGap="10px"
 			gridRowGap="10px"
@@ -30,6 +31,13 @@ function Critters() {
 					Bugs
 				</Text>
 				<Bugs />
+			</Flex>
+
+			<Flex flexDirection="column" alignItems="center">
+				<Text fontSize="2rem" fontWeight="600" pb={3}>
+					Sea Creatures
+				</Text>
+				<Sea />
 			</Flex>
 		</Grid>
 	);
