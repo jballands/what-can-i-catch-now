@@ -8,7 +8,7 @@ function Critters() {
 	return (
 		<Grid
 			bg="brown1"
-			gridTemplateColumns={['100%', '100%', '1fr 1fr 1fr']}
+			gridTemplateColumns={['100%', '100%', '1fr 1fr']}
 			gridTemplateRows={['1fr auto', '1fr auto', '100%']}
 			gridColumnGap="10px"
 			gridRowGap="10px"
