@@ -92,7 +92,7 @@ function App() {
 								style={{ textDecoration: 'none' }}
 							>
 								<WebsiteLink color="brown0" mr="7px">
-									v1.1.2
+									v1.2.0
 								</WebsiteLink>
 							</a>
 							<Text mr="7px">|</Text>

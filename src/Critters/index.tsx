@@ -1,45 +1,31 @@
-import React from 'react';
-import { Flex, Grid, Text } from '../SS';
+import React, { useState } from 'react';
+import { Box, Flex, Text } from '../SS';
+import Tabs from './Tabs';
 import Fish from './Fish';
 import Bugs from './Bugs';
 import Sea from './Sea';
+import { CritterTab } from './CritterTab';
 
 function Critters() {
+	const [tab, setTab] = useState(CritterTab.Fish);
+
 	return (
-		<Grid
-			bg="brown1"
-			gridTemplateColumns={['100%', '100%', '1fr 1fr']}
-			gridTemplateRows={['1fr auto', '1fr auto', '100%']}
-			gridColumnGap="10px"
-			gridRowGap="10px"
-			borderRadius="18px"
-			minHeight="50vh"
-			pt={3}
-			pb={[1, 3, 3]}
-			px={[1, 3, 3]}
-			fontSize={['0.85rem', '1rem', '1rem']}
-		>
-			<Flex flexDirection="column" alignItems="center">
-				<Text fontSize="2rem" fontWeight="600" pb={3}>
-					Fish
-				</Text>
-				<Fish />
-			</Flex>
-
-			<Flex flexDirection="column" alignItems="center">
-				<Text fontSize="2rem" fontWeight="600" pb={3}>
-					Bugs
-				</Text>
-				<Bugs />
-			</Flex>
-
-			<Flex flexDirection="column" alignItems="center">
-				<Text fontSize="2rem" fontWeight="600" pb={3}>
-					Sea Creatures
-				</Text>
-				<Sea />
-			</Flex>
-		</Grid>
+		<>
+			<Tabs selectedTab={tab} onTabClicked={setTab} />
+			<Box
+				bg="brown1"
+				borderRadius="0 18px 18px 18px"
+				minHeight="50vh"
+				pt={3}
+				pb={[1, 3, 3]}
+				px={[1, 3, 3]}
+				fontSize={['0.85rem', '1rem', '1rem']}
+			>
+				{tab === CritterTab.Fish && <Fish />}
+				{tab === CritterTab.Bugs && <Bugs />}
+				{tab === CritterTab.SeaCreatures && <Sea />}
+			</Box>
+		</>
 	);
 }
 
