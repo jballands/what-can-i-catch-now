@@ -2,6 +2,7 @@ import React from 'react';
 import { Flex, Grid, Text } from '../SS';
 import Fish from './Fish';
 import Bugs from './Bugs';
+import Sea from './Sea';
 
 function Critters() {
 	return (
@@ -30,6 +31,13 @@ function Critters() {
 					Bugs
 				</Text>
 				<Bugs />
+			</Flex>
+
+			<Flex flexDirection="column" alignItems="center">
+				<Text fontSize="2rem" fontWeight="600" pb={3}>
+					Sea Creatures
+				</Text>
+				<Sea />
 			</Flex>
 		</Grid>
 	);

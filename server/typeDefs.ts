@@ -22,9 +22,19 @@ const typeDefs = gql`
 		months: [Int]
 	}
 
+	type Sea {
+		hemisphere: String
+		name: String
+		image: String
+		cost: Int
+		times: [Int]
+		months: [Int]
+	}
+
 	type Query {
 		Bugs(hemisphere: String!, time: Int, month: Int): [Bug]
 		Fish(hemisphere: String!, time: Int, month: Int): [Fish]
+		Sea(hemisphere: String!, time: Int, month: Int): [Sea]
 	}
 `;
 
