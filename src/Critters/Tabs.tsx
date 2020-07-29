@@ -19,28 +19,28 @@ function Tabs({ selectedTab, onTabClicked }: TabsProps) {
 		<Flex>
 			<HoverBox
 				bg={selectedTab === CritterTab.Fish ? 'brown1' : 'brown3'}
-				p="15px"
+				p={['10px', '15px', '15px']}
 				borderRadius="15px 15px 0 0"
 				onClick={() => onTabClicked(CritterTab.Fish)}
 			>
-				<Text fontSize="1.2rem">Fish</Text>
+				<Text fontSize={['1rem', '1.2rem', '1.2rem']}>Fish</Text>
 			</HoverBox>
 			<HoverBox
 				bg={selectedTab === CritterTab.Bugs ? 'brown1' : 'brown3'}
-				p="15px"
+				p={['10px', '15px', '15px']}
 				mx="5px"
 				borderRadius="15px 15px 0 0"
 				onClick={() => onTabClicked(CritterTab.Bugs)}
 			>
-				<Text fontSize="1.2rem">Bugs</Text>
+				<Text fontSize={['1rem', '1.2rem', '1.2rem']}>Bugs</Text>
 			</HoverBox>
 			<HoverBox
 				bg={selectedTab === CritterTab.SeaCreatures ? 'brown1' : 'brown3'}
-				p="15px"
+				p={['10px', '15px', '15px']}
 				borderRadius="15px 15px 0 0"
 				onClick={() => onTabClicked(CritterTab.SeaCreatures)}
 			>
-				<Text fontSize="1.2rem">Sea Creatures</Text>
+				<Text fontSize={['1rem', '1.2rem', '1.2rem']}>Sea Creatures</Text>
 			</HoverBox>
 		</Flex>
 	);

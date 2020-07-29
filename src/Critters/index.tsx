@@ -10,7 +10,7 @@ function Critters() {
 	const [tab, setTab] = useState(CritterTab.Fish);
 
 	return (
-		<>
+		<Box mt="20px">
 			<Tabs selectedTab={tab} onTabClicked={setTab} />
 			<Box
 				bg="brown1"
@@ -25,7 +25,7 @@ function Critters() {
 				{tab === CritterTab.Bugs && <Bugs />}
 				{tab === CritterTab.SeaCreatures && <Sea />}
 			</Box>
-		</>
+		</Box>
 	);
 }
 
